@@ -69,6 +69,8 @@ dev           # 开发主分支（集成所有功能）
 feature/xxx   # 个人功能分支（如 feature/map、feature/query）
 ```
 
+**当前分支**：`main`、`dev` 已创建
+
 ### 日常开发流程
 
 ```bash
