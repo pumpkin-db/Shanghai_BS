@@ -6,9 +6,9 @@
  */
 
 // ===== 配置 =====
-var MAP_URL = 'http://localhost:8090/iserver/services/map-ShanghaiMap-3/rest/maps/上海市';
-// 天地图密钥：c43168211498c64b2efe6fd50fb567eb
-var TIANDITU_KEY = '';
+// 从全局 CONFIG 读取配置（index.html 中先引入 config.js）
+var MAP_URL = CONFIG.ISERVER_URL + '/services/map-' + CONFIG.MAP_SERVICE + '/rest/maps/上海市';
+var TIANDITU_KEY = CONFIG.TIANDITU_KEY;
 
 // ===== 初始化地图（EPSG:4326）=====
 var map = L.map('map', {
