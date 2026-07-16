@@ -61,73 +61,58 @@ Shanghai_BS/
 
 ## 代码协作流程
 
-### 分支策略
+### 仓库与分支
 
-```
-main          # 稳定版（可运行）
-dev           # 开发主分支（集成所有功能）
-feature/xxx   # 个人功能分支（如 feature/map、feature/query）
-```
+- 仓库：https://github.com/pumpkin-db/Shanghai_BS
+- 分支：`main`（稳定版）、`dev`（开发版）
 
-**当前分支**：`main`、`dev` 已创建
-
-### 日常开发流程
+### 首次克隆
 
 ```bash
-# 1. 切换到 dev 分支
-git checkout dev
-
-# 2. 拉取最新代码（每天开发前必做）
-git pull
-
-# 3. 创建个人功能分支
-git checkout -b feature/你的功能名
-
-# 4. 开发...
-
-# 5. 提交代码
-git add .
-git commit -m "feat: 功能描述"
-# 或
-git commit -m "fix: 修复描述"
-
-# 6. 切换到 dev，合并自己的分支
-git checkout dev
-git merge feature/你的功能名
-
-# 7. 推送到远程
-git push
-
-# 8. 删除已合并的功能分支（可选）
-git branch -d feature/你的功能名
+# 任意位置执行
+git clone https://github.com/pumpkin-db/Shanghai_BS.git
+cd Shanghai_BS
+cp config.example.js config.js
+# 编辑 config.js 填入 API Key
 ```
 
-### 提交信息规范
+### 日常开发（在 Shanghai_BS 目录下）
 
-| 前缀 | 用途 | 示例 |
-|------|------|------|
-| `feat` | 新功能 | `feat: 建筑查询功能` |
-| `fix` | 修复 bug | `fix: 地图加载失败` |
-| `docs` | 文档修改 | `docs: 更新 README` |
-| `refactor` | 代码重构 | `refactor: 统一配置管理` |
-| `style` | 样式调整 | `style: 优化弹窗样式` |
+```bash
+# 切换到开发分支
+git checkout dev
+
+# 拉取最新代码（每天开发前必做）
+git pull
+
+# 开发...
+
+# 提交并推送
+git add .
+git commit -m "说明改了什么"
+git push
+```
+
+### 提交信息格式
+
+```
+feat: 新功能（如 feat: 建筑查询）
+fix: 修复 bug（如 fix: 地图加载失败）
+docs: 文档修改
+```
 
 ### 冲突解决
 
-如果 `git pull` 或 `git merge` 提示冲突：
-
-1. 打开冲突文件，找到 `<<<<<<<`、`=======`、`>>>>>>>` 标记
-2. 手动选择保留哪部分代码（可和组员沟通）
-3. 删除标记，保存文件
-4. `git add .` → `git commit`
+`git pull` 提示冲突时：
+1. 打开冲突文件，找到 `<<<<<<<` 标记
+2. 手动选择保留哪部分
+3. 保存 → `git add .` → `git commit`
 
 **原则**：谁修改的文件谁负责解决冲突。
 
 ### 数据文件
 
-二进制文件（.udbx、.smwu、历史照片、多媒体）不在此仓库，通过网盘/群文件共享。
-
-获取数据后放到项目对应目录，不要提交到 Git。
+二进制文件（.udbx、.smwu、照片、多媒体）不在此仓库，通过网盘共享。
 
 ## 开发进度
 
