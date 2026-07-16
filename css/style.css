@@ -1,0 +1,57 @@
+/* 全局：去除默认边距，地图占满全屏 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 地图容器 */
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* 底图切换按钮区域 */
+#baseMapSwitch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#baseMapSwitch button {
+    display: block;
+    padding: 8px 16px;
+    margin: 2px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 120px;
+    text-align: center;
+}
+
+#baseMapSwitch button:hover {
+    background: #e8f4fd;
+    border-color: #4a90d9;
+}
+
+#baseMapSwitch button.active {
+    background: #4a90d9;
+    color: #fff;
+    border-color: #4a90d9;
+}
