@@ -19,3 +19,6 @@ config.js
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# 项目指导文件（根目录已有，不重复）
+CLAUDE.md
